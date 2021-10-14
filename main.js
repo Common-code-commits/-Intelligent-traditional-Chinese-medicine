@@ -5,7 +5,7 @@ import Vue from 'vue'
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({
-    App
+    ...App
 })
 app.$mount()
 // #endif
@@ -18,9 +18,4 @@ export function createApp() {
     app
   }
 }
-// #endif
-
-// #ifdef VUE3
-import uView from "uview-ui"
-Vue.use(uView)
 // #endif
