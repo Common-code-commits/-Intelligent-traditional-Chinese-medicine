@@ -9,6 +9,7 @@ const app = new Vue({
 })
 app.$mount()
 
+// 引入全局uview
 import uView from 'uview-ui';
 Vue.use(uView);
 

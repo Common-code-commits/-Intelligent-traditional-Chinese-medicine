@@ -1,6 +1,5 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
@@ -23,12 +22,13 @@
 	}
 </script>
 
-<style>
+<style lang="scss" >
 	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		background-color: $app_green;
 	}
 
 	.logo {

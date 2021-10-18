@@ -12,7 +12,17 @@
  * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
  */
 
-/* 颜色变量 */
+$app_green:#44E8A8;
+$app_red:#F83333;
+$app_blue:#399CF9;
+$app_yellow:#F9C339;
+$app_orange:#F97E39;
+$app_black:#333333;
+$app_gray:#D4D4D4;
+$app_light_gray:#F8F8F8;
+$app_deep_gray:#999999;
+$app_dark_gray:#666666;
+
 
 /* 行为相关颜色 */
 $uni-color-primary: #007aff;
