@@ -6,14 +6,18 @@
 		{
 			"path": "pages/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": ""
 			}
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#FFFFFF",
+		"navigationStyle":"custom",
+		"app-plus":{
+			"titleView":false
+		}
 	}
 }
