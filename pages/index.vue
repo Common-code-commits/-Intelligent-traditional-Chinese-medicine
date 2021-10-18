@@ -28,7 +28,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-color: $app_green;
 	}
 
 	.logo {
