@@ -1,32 +1,30 @@
 <template>
-	<view class="content">
-		<view class="search_box">
-			<u-search placeholder="桂枝汤" 
-					  v-model="keyword" 
-					  :show-action="false">
-			</u-search>
-		</view>
-	</view>
+	<Header class="content_top" >
+	</Header>
 </template>
-
 <script>
+	import Header from "./components/header.vue"
 	export default {
 		data() {
 			return {
-				keyword: ''
+				keyword: '',
 			}
-		}
+		},
+		components: {
+			Header
+		},
+		methods:{
+		},
+		mounted:function(){
+		},
 	}
 </script>
 
-<style lang="scss" >
-	.content {
+<style lang="scss" scoped>
+	.content_top {
 		height:30vh;
 		background-color: $app_green;
-	}
-	.search_box{
-		width: 100%;
-		padding: 0 5vw;
-		// background-color: red;
+		padding-left:6vw;
+		padding-right:6vw;
 	}
 </style>
