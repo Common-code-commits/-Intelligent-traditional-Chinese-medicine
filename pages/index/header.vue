@@ -1,10 +1,10 @@
 <template>
 	<view :style="{paddingTop: statusBarHeight + 'px'}">
-		<view class="top" >
+		<view class="top">
 			<view>
 				<location></location>
 			</view>
-			<view>
+			<view class="top_right">
 				<scanner></scanner>
 				<messages></messages>
 			</view>
@@ -15,6 +15,10 @@
 					  :show-action="false">
 			</u-search>
 		</view>
+		<view class="tabs_box">
+			<tabs></tabs>
+		</view>
+		<Swiper></Swiper>
 	</view>
 </template>
 
@@ -22,37 +26,49 @@
 	import location from "./location.vue"
 	import scanner from "./scanner.vue"
 	import messages from "./messages.vue"
+	import tabs from "./tabs.vue"
+	import Swiper from "./Swiper.vue"
 	export default {
 		data() {
 			return {
-				keyword:"",
-				statusBarHeight:0,
+				keyword: "",
+				statusBarHeight: 0,
 			}
 		},
-		components:{
+		components: {
 			location,
 			scanner,
-			messages
+			messages,
+			tabs,
+			Swiper,
 		},
-		methods:{
-			setheader:function()
-			{
+		methods: {
+			setheader: function() {
 				this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
 			}
 		},
-		created:function(){
+		created: function() {
 			this.setheader()
 		}
-	}	
+	}
 </script>
-<style 	lang="scss" >
-	.search_box,.top{
+<style lang="scss">
+	.search_box,
+	.top {
 		width: 100%;
 	}
-	.top
-	{
+	.top {
 		padding-top: 2vh;
 		padding-bottom: 2vh;
+		display: flex;
+		justify-content: space-between;
+	}
+	.tabs_box
+	{
+		margin: 2vh 0;
+	}
+	.top_right{
+		width:16vw;
 		display: flex;
 		justify-content: space-between;
 	}

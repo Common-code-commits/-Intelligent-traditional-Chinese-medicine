@@ -1,9 +1,15 @@
 <template>
-	<Header class="content_top" >
-	</Header>
+	<view>
+			<Header class="content_top" >
+			</Header>
+			<grid></grid>
+			<noticebar></noticebar>
+	</view>
 </template>
 <script>
-	import Header from "./components/header.vue"
+	import Header from "./index/header.vue"
+	import grid from "./index/maingrids.vue"
+	import noticebar from "./index/noticebar.vue"
 	export default {
 		data() {
 			return {
@@ -11,7 +17,9 @@
 			}
 		},
 		components: {
-			Header
+			Header,
+			grid,
+			noticebar
 		},
 		methods:{
 		},
@@ -22,7 +30,6 @@
 
 <style lang="scss" scoped>
 	.content_top {
-		height:30vh;
 		background-color: $app_green;
 		padding-left:6vw;
 		padding-right:6vw;

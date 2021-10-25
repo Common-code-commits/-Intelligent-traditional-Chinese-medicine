@@ -7,8 +7,19 @@
 	export default {
 		data(){
 			return{
-				text:"北京市"
+				text:"北京市",
 			}
+		},
+		created:function(){
+			uni.getLocation({
+			    type: 'wgs84',
+				geocode:true,
+			    success: function (res) {
+			        console.log('当前位置的经度：' + res.longitude);
+			        console.log('当前位置的纬度：' + res.latitude);
+					this.text = res.address.city
+			    }
+			})
 		}
 	}
 </script>
@@ -18,7 +29,7 @@
 		    display: inline-block;
 		    width: 24px;
 		    height: 24px;
-		    background-image: url("https://obohe.com/i/2021/10/20/h6qpf5.svg");
+		    background-image: url("../../src/location.svg");
 			background-size:100% 100%;
 	}
 	.location_box{
@@ -33,7 +44,7 @@
 		    display: inline-block;
 		    width: 6px;
 		    height: 6px;
-		    background-image: url("https://obohe.com/i/2021/10/22/xw0r8u.svg");
+		    background-image: url("../../src/triangle.svg");
 			background-size:100% 100%;
 	}
 	p{

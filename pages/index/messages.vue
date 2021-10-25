@@ -1,7 +1,9 @@
 <template>
-	<image class="scanner"
-			src="https://obohe.com/i/2021/10/22/ytckxt.svg">
-	</image>
+	<view>
+		<image class="messages" src="../../src/messages.svg" >
+		</image>
+		<u-badge type="error" count="7" :is-center="true"></u-badge>
+	</view>
 </template>
 <script>
 	export default {
@@ -17,8 +19,15 @@
 	}
 </script>
 <style>
-	.scanner{
+	view{
+		position: relative;
+	}
+	view,.messages
+	{
 		display: inline-block;
+	}
+	.messages
+	{
 		width: 24px;
 		height: 24px;
 	}
