@@ -32,7 +32,11 @@
 
 <style lang="scss">
 	.content_top {
-		background: linear-gradient(to bottom, $app_green 0%, $app_green 75%, white 75%,white 100%);
+		background: linear-gradient(to bottom, 
+			$app_green 0%, 
+			$app_green 75%, 
+			rgba(121,121,121,0.1) 75%,
+			rgba(121,121,121,0.1)  100%);
 		padding-left:6vw;
 		padding-right:6vw;
 		height:42vh;
@@ -41,5 +45,6 @@
 	{
 		padding-left:1vw;
 		padding-right:1vw;		
+		background-color: rgba(121,121,121,0.1);
 	}
 </style>

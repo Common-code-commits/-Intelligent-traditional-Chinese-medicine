@@ -11,10 +11,7 @@
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#007AFF",
-		"backgroundColor": "#FFFFFF",
+		"backgroundColor": "rgb(121,121,121)",
 		"navigationStyle":"custom",
 		"app-plus":{
 			"titleView":false

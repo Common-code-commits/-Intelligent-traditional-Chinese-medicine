@@ -1,15 +1,14 @@
 <template>
 	<view class="root">
-		<u-grid :col="4" @click="click" :border="false">
-			<u-grid-item :custom-style="activity_cell" v-for="(item, index) in mainList" :index="index" :key="index">
-				<view class="activity" :style="{background: colors[index]}">
-					
+		<u-grid :col="4" @click="click" :border="false" >
+			<u-grid-item :bg-color="bgcolor" :custom-style="activity_cell" v-for="(item, index) in mainList" :index="index" :key="index">
+				<view class="activity" :style="{background: colors[index]}">		
 				</view>
 				{{item}}
 			</u-grid-item>
 		</u-grid>
 		<u-grid :col="4" @click="click" :border="false">
-			<u-grid-item :custom-style="activity_cell" v-for="(item, index) in subList" :index="index" :key="index">
+			<u-grid-item :bg-color="bgcolor" :custom-style="activity_cell" v-for="(item, index) in subList" :index="index" :key="index">
 				<view 
 					class="activity" 
 					:style="{background: colors[index]}">	
@@ -29,8 +28,10 @@
 				subList:['感冒用药','医疗器械','儿科用药','更多分类'],
 				colors:['#4EF1B6','#F85E49','#47B3F9','#FF9A33'],
 				activity_cell:{
-					padding:"1vh 0"
-				}
+					padding:"1vh 0",
+					backgroundColor:"rgba(0,0,0,0)"
+				},
+				bgcolor:"rgba(0,0,0,0)"
 			};
 		},
 		methods: {
@@ -48,7 +49,7 @@
 <style scoped lang="scss">
 	/* 下方这些scss变量为uView内置变量，详见开发  组件-指南-内置样式 */
 	.root{
-
+		background-color: rgba(0,0,0,0);
 	}
 	.activity
 	{
