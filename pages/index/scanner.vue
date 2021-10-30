@@ -1,6 +1,6 @@
 <template>
 	<image class="scanner"
-			src="../../src/scanner.svg"
+			src="http://api.hzxwhzxw.asia/static/scanner.svg"
 			@click="click()"
 			>
 	</image>

@@ -4,7 +4,10 @@
 			</Header>
 			<view class="content">
 				<grid></grid>
-				<noticebar></noticebar>				
+				<noticebar></noticebar>		
+				<treat></treat>
+				<drugstore></drugstore>
+				<tabbar></tabbar>
 			</view>
 	</view>
 </template>
@@ -12,6 +15,9 @@
 	import Header from "./index/header.vue"
 	import grid from "./index/maingrids.vue"
 	import noticebar from "./index/noticebar.vue"
+	import treat from "./index/treat.vue"
+	import drugstore from "./index/drugstore.vue"
+	import tabbar from "./index/tabbar.vue"
 	export default {
 		data() {
 			return {
@@ -21,7 +27,10 @@
 		components: {
 			Header,
 			grid,
-			noticebar
+			noticebar,
+			treat,
+			drugstore,
+			tabbar
 		},
 		methods:{
 		},
@@ -35,8 +44,8 @@
 		background: linear-gradient(to bottom, 
 			$app_green 0%, 
 			$app_green 75%, 
-			rgba(121,121,121,0.1) 75%,
-			rgba(121,121,121,0.1)  100%);
+			#F8F8F8 75%,
+			#F8F8F8 100%);
 		padding-left:6vw;
 		padding-right:6vw;
 		height:42vh;
@@ -45,6 +54,6 @@
 	{
 		padding-left:1vw;
 		padding-right:1vw;		
-		background-color: rgba(121,121,121,0.1);
+		background-color: #F8F8F8;
 	}
 </style>

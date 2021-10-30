@@ -1,19 +1,21 @@
 <template>
 	<view class="root">
-		<u-grid :col="4" @click="click" :border="false" >
-			<u-grid-item :bg-color="bgcolor" :custom-style="activity_cell" v-for="(item, index) in mainList" :index="index" :key="index">
-				<view class="activity" :style="{background: colors[index]}">		
+		<u-grid :col="4" @click="click" :border="false">
+			<u-grid-item :bg-color="bgcolor" :custom-style="activity_cell" v-for="(item, index) in mainList"
+				:index="index" :key="index">
+				<view class="activity shadow" :style="{background: item.color}">
+					<image class="icon" :src="item.imgurl"></image>
 				</view>
-				{{item}}
+				{{item.title}}
 			</u-grid-item>
 		</u-grid>
 		<u-grid :col="4" @click="click" :border="false">
-			<u-grid-item :bg-color="bgcolor" :custom-style="activity_cell" v-for="(item, index) in subList" :index="index" :key="index">
-				<view 
-					class="activity" 
-					:style="{background: colors[index]}">	
+			<u-grid-item :bg-color="bgcolor" :custom-style="activity_cell" v-for="(item, index) in subList"
+				:index="index" :key="index">
+				<view class="activity">
+					<image class="bigicon" :src="item.imgurl"></image>
 				</view>
-				{{item}}
+				{{item.title}}
 			</u-grid-item>
 		</u-grid>
 	</view>
@@ -24,46 +26,78 @@
 		data() {
 			return {
 				current: 0,
-				mainList: ['附近门店', '领券中心', '防疫用品', '活动中心'],
-				subList:['感冒用药','医疗器械','儿科用药','更多分类'],
-				colors:['#4EF1B6','#F85E49','#47B3F9','#FF9A33'],
-				activity_cell:{
-					padding:"1vh 0",
-					backgroundColor:"rgba(0,0,0,0)"
+				mainList:[],
+				subList:[],
+				activity_cell: {
+					padding: "1vh 0",
+					backgroundColor: "rgba(0,0,0,0)"
 				},
-				bgcolor:"rgba(0,0,0,0)"
-			};
+				bgcolor: "rgba(0,0,0,0)"
+			}
 		},
 		methods: {
 			change(e) {
 				console.log("test")
 			},
-			click(e)
-			{
-				console.log("test")				
+			click(e) {
+				console.log("test")
+			},
+			getData() {
+				var that = this
+				uni.request({
+						url: 'http://api.hzxwhzxw.asia/mainList',
+						success: (res) => {
+							that.mainList = res.data
+						},
+						fail: (res) => {
+							console.log('get失败');
+						}
+					}),
+				uni.request({
+					url: 'http://api.hzxwhzxw.asia/subList',
+					success: (res) => {
+						that.subList = res.data
+					},
+					fail: (res) => {
+						console.log('get失败')
+					}
+				})
 			}
+		},
+		mounted:function()
+		{
+			this.getData()
 		}
-	};
+	}
 </script>
 
 <style scoped lang="scss">
-	/* 下方这些scss变量为uView内置变量，详见开发  组件-指南-内置样式 */
-	.root{
-		background-color: rgba(0,0,0,0);
+	.root {
+		background-color: rgba(0, 0, 0, 0);
 	}
-	.activity
-	{
-		width:56%;
+
+	.shadow {
+		box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.1);
+	}
+
+	.activity {
+		width: 56%;
 		height: 13vw;
 		border-radius: 50%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 1vh;
-		box-shadow: 0px 4px 0px rgba(0,0,0,0.1);
-		color:rgb(121,121,121);
-	}
-	.swiper {
+		color: rgb(121, 121, 121);
 	}
 
+	.icon {
+		width: 8vw;
+		height: 8vw;
+	}
+
+	.bigicon {
+		width: 10vw;
+		height: 10vw;
+	}
 </style>

@@ -8,6 +8,18 @@
 			"style": {
 				"navigationBarTitleText": ""
 			}
+		},
+		{
+			"path": "pages/me",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/medicine",
+			"style": {
+				"navigationBarTitleText": ""
+			}
 		}
 	],
 	"globalStyle": {
@@ -16,5 +28,30 @@
 		"app-plus":{
 			"titleView":false
 		}
-	}
+	},
+		"tabBar": {
+			"color": "#909399",
+			"selectedColor": "#303133",
+			"backgroundColor": "#FFFFFF",
+			"borderStyle": "black",
+			"list": [{
+					"pagePath": "pages/index",
+					"iconPath": "",
+					"selectedIconPath": "",
+					"text": "首页"
+				},
+				{
+					"pagePath": "pages/medicine",
+					"iconPath": "",
+					"selectedIconPath": "",
+					"text": "药"
+				},
+				{
+					"pagePath": "pages/me",
+					"iconPath": "",
+					"selectedIconPath": "",
+					"text": "我的"
+				}
+			]
+		}
 }

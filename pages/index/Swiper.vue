@@ -30,7 +30,6 @@
 			let Height = uni.getSystemInfoSync().screenHeight
 			let width = uni.getSystemInfoSync().screenWidth
 			this.height = parseInt( Height * 0.18 / (width/750))
-			console.log(Height)
 		}
 	}
 </script>

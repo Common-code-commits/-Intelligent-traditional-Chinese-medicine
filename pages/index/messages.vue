@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<image class="messages" src="../../src/messages.svg" >
+		<image class="messages" src="http://api.hzxwhzxw.asia/static/messages.svg" >
 		</image>
 		<u-badge  size="mini" type="error" count="7" :is-center="true"></u-badge>
 	</view>

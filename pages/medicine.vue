@@ -1,21 +1,17 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<image class="logo"></image>
 		<view class="text-area">
-			<text class="title">{{title}}</text>
 		</view>
+		<tabbar></tabbar>
 	</view>
 </template>
 
 <script>
+	import tabbar from "./index/tabbar.vue"
 	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
+		components:{
+			tabbar
 		},
 		methods: {
 
