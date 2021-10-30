@@ -1,15 +1,20 @@
 <template>
 	<view class="root">
-		<u-grid :col="4" @click="click" >
-			<u-grid-item :custom-style="activity_cell" v-for="(item, index) in list" :index="index" :key="index">
+		<u-grid :col="4" @click="click" :border="false">
+			<u-grid-item :custom-style="activity_cell" v-for="(item, index) in mainList" :index="index" :key="index">
 				<view class="activity" :style="{background: colors[index]}">
 					
 				</view>
 				{{item}}
 			</u-grid-item>
 		</u-grid>
-		<u-grid :col="4" @click="click" >
-			<u-grid-item v-for="(item, index) in list" :index="index" :key="index">
+		<u-grid :col="4" @click="click" :border="false">
+			<u-grid-item :custom-style="activity_cell" v-for="(item, index) in subList" :index="index" :key="index">
+				<view 
+					class="activity" 
+					:style="{background: colors[index]}">	
+				</view>
+				{{item}}
 			</u-grid-item>
 		</u-grid>
 	</view>
@@ -20,10 +25,11 @@
 		data() {
 			return {
 				current: 0,
-				list: ['附近门店', '领券中心', '防疫用品', '活动中心'],
+				mainList: ['附近门店', '领券中心', '防疫用品', '活动中心'],
+				subList:['感冒用药','医疗器械','儿科用药','更多分类'],
 				colors:['#4EF1B6','#F85E49','#47B3F9','#FF9A33'],
 				activity_cell:{
-					
+					padding:"1vh 0"
 				}
 			};
 		},

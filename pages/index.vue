@@ -2,8 +2,10 @@
 	<view>
 			<Header class="content_top" >
 			</Header>
-			<grid></grid>
-			<noticebar></noticebar>
+			<view class="content">
+				<grid></grid>
+				<noticebar></noticebar>				
+			</view>
 	</view>
 </template>
 <script>
@@ -34,5 +36,10 @@
 		padding-left:6vw;
 		padding-right:6vw;
 		height:42vh;
+	}
+	.content
+	{
+		padding-left:1vw;
+		padding-right:1vw;		
 	}
 </style>
