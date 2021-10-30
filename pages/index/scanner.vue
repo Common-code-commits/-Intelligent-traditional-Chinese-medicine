@@ -1,6 +1,8 @@
 <template>
 	<image class="scanner"
-			src="../../src/scanner.svg">
+			src="../../src/scanner.svg"
+			@click="click()"
+			>
 	</image>
 </template>
 <script>
@@ -11,6 +13,13 @@
 			}
 		},
 		methods:{
+			click:function()
+			{
+				uni.scanCode({
+				    success: function (res) {
+				    }
+				})
+			}
 		},
 		mounted:function(){
 		},
@@ -19,7 +28,7 @@
 <style>
 	.scanner{
 		display: inline-block;
-		width: 24px;
-		height: 24px;
+		width: 28px;
+		height: 28px;
 	}
 </style>

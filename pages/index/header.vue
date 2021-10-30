@@ -71,5 +71,6 @@
 		width:16vw;
 		display: flex;
 		justify-content: space-between;
+		align-items:center;
 	}
 </style>

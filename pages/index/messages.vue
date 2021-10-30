@@ -2,7 +2,7 @@
 	<view>
 		<image class="messages" src="../../src/messages.svg" >
 		</image>
-		<u-badge type="error" count="7" :is-center="true"></u-badge>
+		<u-badge  size="mini" type="error" count="7" :is-center="true"></u-badge>
 	</view>
 </template>
 <script>
@@ -21,10 +21,8 @@
 <style>
 	view{
 		position: relative;
-	}
-	view,.messages
-	{
-		display: inline-block;
+		display: flex;
+		align-items: center;
 	}
 	.messages
 	{

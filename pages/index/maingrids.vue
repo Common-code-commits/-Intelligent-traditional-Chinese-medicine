@@ -1,8 +1,15 @@
 <template>
-	<view>
+	<view class="root">
+		<u-grid :col="4" @click="click" >
+			<u-grid-item :custom-style="activity_cell" v-for="(item, index) in list" :index="index" :key="index">
+				<view class="activity" :style="{background: colors[index]}">
+					
+				</view>
+				{{item}}
+			</u-grid-item>
+		</u-grid>
 		<u-grid :col="4" @click="click" >
 			<u-grid-item v-for="(item, index) in list" :index="index" :key="index">
-				<u-icon :name="item" :size="46"></u-icon>
 			</u-grid-item>
 		</u-grid>
 	</view>
@@ -13,7 +20,11 @@
 		data() {
 			return {
 				current: 0,
-				list: ['integral', 'kefu-ermai', 'coupon', 'gift', 'scan', 'pause-circle', 'wifi', 'email']
+				list: ['附近门店', '领券中心', '防疫用品', '活动中心'],
+				colors:['#4EF1B6','#F85E49','#47B3F9','#FF9A33'],
+				activity_cell:{
+					
+				}
 			};
 		},
 		methods: {
@@ -30,13 +41,21 @@
 
 <style scoped lang="scss">
 	/* 下方这些scss变量为uView内置变量，详见开发  组件-指南-内置样式 */
+	.root{
 
-	.grid-text {
-		font-size: 28rpx;
-		margin-top: 4rpx;
-		color: $u-type-info;
 	}
-
+	.activity
+	{
+		width:56%;
+		height: 13vw;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1vh;
+		box-shadow: 0px 4px 0px rgba(0,0,0,0.1);
+		color:rgb(121,121,121);
+	}
 	.swiper {
 	}
 

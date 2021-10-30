@@ -1,72 +1,65 @@
 <template>
-	<view class="root">
-		<p>热搜</p>
-		<view class="item_box">
-			<view class="item" v-for="(value,key) in list" :key="key">
-				{{value.name}}
-			</view>			
+		<view class="root">
+			<view class="title">热搜</view>
+			<view class="item_box">
+				<view @click="change(item)"
+					  class="item" 
+					  v-for="(item, index) in list" 
+					  :index="index" 
+					  :key="index">
+					{{item}}
+				</view>
+			</view>
 		</view>
-	</view>
 </template>
 
 <script>
 	export default {
 		data() {
 			return {
-				list: [{
-					name: '待收货'
-				}, {
-					name: '待付款'
-				}, {
-					name: '待评价',
-				}, {
-					name: '待评价',
-				}, {
-					name: '待评价',
-				}, {
-					name: '待评价',
-				}],
-				current: 4,
-				itemstyle:{
-					"backgroundColor":"rgb(255,0,0)",
-					"border-radius": "50%"
-				},
-				BarStyle:
-				{
-					"backgroundColor":"rgb(255,0,0)"					
-				}
-			}
+				current: 0,
+				list: ['三九感冒灵', '阿莫西林','健胃消食片', '莲花清瘟胶囊'],
+			};
 		},
 		methods: {
-		},
-		created: function() {
+			change(item) {
+				console.log(item)
+			}
 		}
-	}
+	};
 </script>
-<style>
-	.root
-	{
-		display: flex;
+
+<style scoped lang="scss">
+	/* 下方这些scss变量为uView内置变量，详见开发  组件-指南-内置样式 */
+	
+	.root{
 		width: 100%;
-		align-items: center;
-		text-align: center;
-		justify-content: space-between;
-		color: white;
-	}
-	p{
-		flex-shrink: 0;		
-	}
-	.item_box
-	{
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.title
+	{
+		flex-shrink: 0;
+		width: 38px;
+		color: white;
+		font-size: 16px;
+	}
+	.item_box{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		overflow-x: scroll;
 	}
 	.item{
 		flex-shrink: 0;
-		background-color: rgba(0,0,0,0.3);
+		padding: 2px 8px;
+		margin: 0px 1vw;
+		border-radius: 8px;
+		background-color: rgba(0,0,0,0.08);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		color: white;
-		border-radius: 999em;
-		padding: 4px;
-		margin-left: 2vw;
-		padding: 4px 8px;
 	}
 </style>

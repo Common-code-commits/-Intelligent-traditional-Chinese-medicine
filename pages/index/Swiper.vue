@@ -1,9 +1,11 @@
 <template>
-	<view>
-		<u-swiper :list="list"></u-swiper>
+	<view class="root">
+		<u-swiper :list="list" 
+				  :height="height"
+				  :border-radius="16"
+				  ></u-swiper>
 	</view>
 </template>
-
 <script>
 	export default {
 		data() {
@@ -21,13 +23,17 @@
 						title: '谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳'
 					}
 				],
+				height:250
 			}
 		},
-		methods: {
-
+		mounted:function(){
+			let Height = uni.getSystemInfoSync().screenHeight
+			let width = uni.getSystemInfoSync().screenWidth
+			this.height = parseInt( Height * 0.18 / (width/750))
+			console.log(Height)
 		}
 	}
 </script>
-
 <style lang="scss" scoped>
+
 </style>

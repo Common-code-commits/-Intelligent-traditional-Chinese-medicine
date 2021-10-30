@@ -28,10 +28,11 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.content_top {
-		background-color: $app_green;
+		background: linear-gradient(to bottom, $app_green 0%, $app_green 75%, white 75%,white 100%);
 		padding-left:6vw;
 		padding-right:6vw;
+		height:42vh;
 	}
 </style>
