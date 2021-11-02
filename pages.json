@@ -20,36 +20,31 @@
 			"style": {
 				"navigationBarTitleText": ""
 			}
+		},
+		{
+			"path": "pages/city_picker",
+			"style":{
+				"navigationBarTitleText": ""				
+			}
 		}
 	],
 	"globalStyle": {
-		"backgroundColor": "rgb(121,121,121)",
 		"navigationStyle":"custom",
 		"app-plus":{
 			"titleView":false
 		}
 	},
 		"tabBar": {
-			"color": "#909399",
-			"selectedColor": "#303133",
-			"backgroundColor": "#FFFFFF",
-			"borderStyle": "black",
 			"list": [{
 					"pagePath": "pages/index",
-					"iconPath": "",
-					"selectedIconPath": "",
 					"text": "首页"
 				},
 				{
 					"pagePath": "pages/medicine",
-					"iconPath": "",
-					"selectedIconPath": "",
 					"text": "药"
 				},
 				{
 					"pagePath": "pages/me",
-					"iconPath": "",
-					"selectedIconPath": "",
 					"text": "我的"
 				}
 			]

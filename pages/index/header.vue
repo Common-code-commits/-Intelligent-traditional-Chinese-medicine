@@ -1,12 +1,12 @@
 <template>
-	<view :style="{paddingTop: statusBarHeight + 'px'}">
+	<view class="content_top" >
 		<view class="top">
 			<view>
 				<location></location>
 			</view>
 			<view class="top_right">
-				<scanner></scanner>
-				<messages></messages>
+				<myscanner></myscanner>
+				<mymessages></mymessages>
 			</view>
 		</view>
 		<view class="search_box">
@@ -18,16 +18,16 @@
 		<view class="tabs_box">
 			<tabs></tabs>
 		</view>
-		<Swiper></Swiper>
+		<myswiper></myswiper>
 	</view>
 </template>
 
 <script>
 	import location from "./location.vue"
-	import scanner from "./scanner.vue"
-	import messages from "./messages.vue"
+	import myscanner from "./scanner.vue"
+	import mymessages from "./messages.vue"
 	import tabs from "./tabs.vue"
-	import Swiper from "./Swiper.vue"
+	import myswiper from "./Swiper.vue"
 	export default {
 		data() {
 			return {
@@ -37,10 +37,10 @@
 		},
 		components: {
 			location,
-			scanner,
-			messages,
+			myscanner,
+			mymessages,
 			tabs,
-			Swiper,
+			myswiper,
 		},
 		methods: {
 			setheader: function() {
@@ -52,13 +52,22 @@
 		}
 	}
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+	.content_top {
+		padding-top: 3vh;
+		background: linear-gradient(to bottom,
+				$app_green 0%,
+				$app_green 75%,
+				rgba(0,0,0,0) 75%,
+				rgba(0,0,0,0) 100%);
+		padding-left: 6vw;
+		padding-right: 6vw;
+	}
 	.search_box,
 	.top {
 		width: 100%;
 	}
 	.top {
-		padding-top: 2vh;
 		padding-bottom: 2vh;
 		display: flex;
 		justify-content: space-between;
@@ -68,7 +77,7 @@
 		margin: 2vh 0;
 	}
 	.top_right{
-		width:16vw;
+		width:18vw;
 		display: flex;
 		justify-content: space-between;
 		align-items:center;

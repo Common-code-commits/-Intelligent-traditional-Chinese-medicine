@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<u-tabbar :list="tabbar" :mid-button="true"></u-tabbar>
+		<u-tabbar :list="tabbar"></u-tabbar>
 	</view>
 </template>
 
@@ -9,24 +9,23 @@
 		data() {
 			return {
 				tabbar : [{
-						iconPath: "",
-						selectedIconPath: "",
+						iconPath: "http://api.hzxwhzxw.asia/static/medicine.svg",
+						selectedIconPath: "http://api.hzxwhzxw.asia/static/medicine_active.svg",
 						text: '找药',
-						isDot: true,
 						pagePath: "/pages/medicine"
 					},
 					{
-						iconPath: "",
-						selectedIconPath: "",
+						iconPath: "http://api.hzxwhzxw.asia/static/index.svg",
+						selectedIconPath: "http://api.hzxwhzxw.asia/static/index_active.svg",
 						text: '首页',
-						midButton: true,
 						pagePath: "/pages/index"
 					},
 					{
-						iconPath: "",
-						selectedIconPath: "",
+						iconPath: "http://api.hzxwhzxw.asia/static/me.svg",
+						selectedIconPath: "http://api.hzxwhzxw.asia/static/me_active.svg",
 						text: '我的',
-						pagePath: "/pages/me"
+						pagePath: "/pages/me",
+						isDot: true,
 					},
 				]
 			}
@@ -34,7 +33,7 @@
 	}
 </script>
 
-<style>
+<style scoped lang="scss">
 	.content {
 		display: flex;
 		flex-direction: column;

@@ -1,29 +1,11 @@
 <template>
 	<view>
-		<view class="top">
-	        <view class="center">
-				<view class="center_top">
-					<view class="center_image">
-						<image  class="user_head" src="https://img2.baidu.com/it/u=3761092847,3391042259&fm=26&fmt=auto"></image>
-					</view>
-					<view class="center_info">
-						<text class="center_name">{{t1}}</text>
-					<view class="center_phone">{{t2}}</view>
-					</view>
-				</view>
-				<view class="center_down">
-					<view class="center_rank">
-						<image class="rank_icon" src="https://img0.baidu.com/it/u=1690281246,201617151&fm=26&fmt=auto"></image>
-						<text class="rank_text">{{t3}}</text>
-					</view>
-					<view class="center_score">
-						<image class="rank_icon" src="https://img2.baidu.com/it/u=3081028652,2085464089&fm=26&fmt=auto"></image>
-						<text class="rank_text">{{t4}}</text>
-					</view>
-					<image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
-				</view>
-	        </view>
-	    </view>
+		<u-navbar  :is-back="false"
+				    :height="statusbarheight"
+				   :background="background"
+				   :border-bottom="false"
+		></u-navbar>
+		<user></user>
 	    <view class="bot_k">
 	        <image class="bot_limg1" src="https://img1.baidu.com/it/u=3966393210,749231153&fm=26&fmt=auto"></image>
 	        <text class="bot_text1">{{t5}}</text>
@@ -42,158 +24,39 @@
 </template>
 
 <script>
-	import tabbar from "./index/tabbar.vue"
+	import user from "./me/users.vue"
 	export default {
 		data() {
 			return {
-				t1:'橘子味',
-				t2:'基本信息',
-				t3:'我的诊疗',
-				t4:'我的订单',
 				t5:'我的医生',
 				t6:'我的预约',
-				t7:'我的提醒'
+				t7:'我的提醒',
+				background:{
+					 background: '#44E8A8'
+				},
+				statusbarheight:"0"
 			}
 		},
-		onLoad() {
-
-		},
 		components:{
-			tabbar
+			user
 		},
 		methods: {
-
-		}
+			setstatusBarHeight:function(){
+				// #ifdef MP-WEIXIN
+				this.statusbarheight = uni.getMenuButtonBoundingClientRect().height
+				// #endif
+				// #ifdef MP-WEIXIN
+				this.statusbarheight = uni.getSystemInfoSync().statusBarHeight
+				// #endif
+			}
+		},
+		mounted: function() {
+			this.setstatusBarHeight()
+		},
 	}
 </script>
 
-<style>
-	.top {
-	  width: 100%;
-	  height: 180px;
-	  background: #23EBB9;
-	  padding-top: 15px;
-	  position: relative;
-	}
-	
-	.center {
-	  width: 95%;
-	  height: 150px;
-	  background: white;
-	  display: flex;
-	  flex-direction: column;
-	  margin: 0 auto;
-	  border-radius: 5px;
-	}
-	
-	.center_top {
-	  display: flex;
-	  flex-direction: row;
-	  width: 80%;
-	  height: 80px;
-	  margin: 0 auto;
-	  margin-top: 20rpx;
-	  border-bottom: 1px solid #EEEEEE;
-	}
-	
-	.center_img {
-	  width: 66px;
-	  height: 66px;
-	  border-radius: 50%;
-	  overflow: hidden;
-	}
-	
-	.center_img image {
-	  width: 100%;
-	  height: 100%;
-	  border-radius: 50%;
-	}
-	
-	.center_img .user_head {
-	  width: 100%;
-	  height: 100%;
-	}
-	
-	.center_info {
-	  display: flex;
-	  flex-direction: column;
-	  margin-top: 10rpx;
-	  margin-left: 30px;
-	}
-	
-	.center_name {
-	  font-size: 15px;
-	}
-	
-	.center_phone {
-	  color: #BEBEBE;
-	  padding-top: 10px;
-	  font-size: 13px;
-	}
-	
-	.center_down {
-	  display: flex;
-	  flex-direction: row;
-	  width: 80%;
-	  height: 35px;
-	  margin: 0 auto;
-	  margin-top: 20rpx;
-	}
-	
-	.center_rank {
-	  width: 50%;
-	  height: 35px;
-	  display: flex;
-	  flex-direction: row;
-	}
-	
-	.rank_text {
-	  height: 35px;
-	  line-height: 35px;
-	  margin-left: 10rpx;
-	  color: #AAAAAA;
-	}
-	
-	.rank_icon{
-	  height:45%;
-	  width:45%;
-	}
-	
-	.center_rank image {
-	  width: 35px;
-	  height: 35px;
-	}
-	
-	.center_score {
-	  width: 50%;
-	  height: 35px;
-	  display: flex;
-	  flex-direction: row;
-	}
-	
-	.center_score image {
-	  width: 35px;
-	  height: 35px;
-	}
-	
-	.gif-wave {
-	  position: absolute;
-	  width: 100%;
-	  bottom: 0;
-	  left: 0;
-	  z-index: 99;
-	  mix-blend-mode: screen;
-	  height: 100rpx;
-	}
-	
-	.user_head{
-	  width: 150rpx;
-	  height:150rpx;
-	  border-radius:50%;
-	  display:flex;
-	  overflow: hidden;
-	  text-align: center;
-	}
+<style lang="scss" scoped>
 	
 	.bot_k{
 	  width:95%;

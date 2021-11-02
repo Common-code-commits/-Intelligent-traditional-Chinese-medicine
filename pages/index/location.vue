@@ -1,13 +1,21 @@
 <template>
-	<div class="location_box">
+	<view class="location_box" @click="nagivator()">
 		<p>{{text}}</p>
-	</div>
+	</view>
 </template>
 <script>
 	export default {
 		data(){
 			return{
 				text:"北京市",
+			}
+		},
+		methods:{
+			nagivator:function()
+			{
+				uni.navigateTo({
+					url:"/pages/city_picker"
+				})
 			}
 		},
 		created:function(){
@@ -26,7 +34,7 @@
 		}
 	}
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 	.location_box:before{
 		    content: '';
 		    display: inline-block;

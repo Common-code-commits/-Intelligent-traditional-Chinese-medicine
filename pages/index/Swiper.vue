@@ -34,5 +34,7 @@
 	}
 </script>
 <style lang="scss" scoped>
-
+	.root{
+		padding: 1vh 0;
+	}
 </style>

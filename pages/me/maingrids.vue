@@ -1,6 +1,6 @@
 <template>
 	<view class="root">
-		<u-grid :col="4" @click="click" :border="false" >
+		<u-grid :col="4" @click="click" :border="false">
 			<u-grid-item :bg-color="bgcolor" :custom-style="activity_cell" v-for="(item, index) in mainList"
 				:index="index" :key="index">
 				<view class="activity shadow" :style="{background: item.color}">

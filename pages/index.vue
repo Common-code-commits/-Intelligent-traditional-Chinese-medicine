@@ -1,14 +1,19 @@
 <template>
 	<view>
-			<Header class="content_top" >
-			</Header>
-			<view class="content">
-				<grid></grid>
-				<noticebar></noticebar>		
-				<treat></treat>
-				<drugstore></drugstore>
-				<tabbar></tabbar>
-			</view>
+		<u-navbar  :is-back="false"
+				    :height="statusbarheight"
+				   :background="background"
+				   :border-bottom="false"
+		></u-navbar>
+		<Header>
+		</Header>
+		<view class="content">
+			<grid></grid>
+			<noticebar></noticebar>
+			<treat></treat>
+			<drugstore></drugstore>
+		</view>
+		<tabbar></tabbar>
 	</view>
 </template>
 <script>
@@ -17,11 +22,16 @@
 	import noticebar from "./index/noticebar.vue"
 	import treat from "./index/treat.vue"
 	import drugstore from "./index/drugstore.vue"
-	import tabbar from "./index/tabbar.vue"
 	export default {
 		data() {
 			return {
 				keyword: '',
+				animationData: {},
+				off: false,
+				statusbarheight : "0",
+				background:{
+					 background: '#44E8A8'
+				}
 			}
 		},
 		components: {
@@ -29,31 +39,34 @@
 			grid,
 			noticebar,
 			treat,
-			drugstore,
-			tabbar
+			drugstore
 		},
-		methods:{
+		methods: {
+			setstatusBarHeight:function(){
+				// #ifdef MP-WEIXIN
+				this.statusbarheight = uni.getMenuButtonBoundingClientRect().height
+				// #endif
+				// #ifdef MP-WEIXIN
+				this.statusbarheight = uni.getSystemInfoSync().statusBarHeight
+				// #endif
+			}
 		},
-		mounted:function(){
+		created: function() {
+			this.setstatusBarHeight()
+			console.log(this.statusbarheight)
 		},
 	}
 </script>
 
-<style lang="scss">
-	.content_top {
-		background: linear-gradient(to bottom, 
-			$app_green 0%, 
-			$app_green 75%, 
-			#F8F8F8 75%,
-			#F8F8F8 100%);
-		padding-left:6vw;
-		padding-right:6vw;
-		height:42vh;
-	}
-	.content
-	{
-		padding-left:1vw;
-		padding-right:1vw;		
+<style lang="scss" >
+	page {
 		background-color: #F8F8F8;
 	}
+
+	.content {
+		padding-left: 1vw;
+		padding-right: 1vw;
+		background-color: #F8F8F8;
+	}
+
 </style>

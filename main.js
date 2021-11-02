@@ -1,7 +1,11 @@
 import App from './App'
-
+import tabbar from 'pages/tabbar.vue'
 // #ifndef VUE3
 import Vue from 'vue'
+import store from './store'
+//把vuex定义成全局组件
+Vue.prototype.$store = store
+Vue.component('tabbar',tabbar)
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({

@@ -18,14 +18,13 @@
 		},
 	}
 </script>
-<style>
+<style scoped lang="scss">
 	view{
 		position: relative;
-		display: flex;
-		align-items: center;
 	}
 	.messages
 	{
+		flex-shrink: 0;
 		width: 24px;
 		height: 24px;
 	}

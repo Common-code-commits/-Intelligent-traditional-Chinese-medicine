@@ -25,8 +25,9 @@
 		},
 	}
 </script>
-<style>
+<style scoped lang="scss">
 	.scanner{
+		flex-shrink:0;
 		display: inline-block;
 		width: 28px;
 		height: 28px;
