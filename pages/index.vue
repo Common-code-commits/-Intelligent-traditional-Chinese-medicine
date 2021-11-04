@@ -53,20 +53,15 @@
 		},
 		created: function() {
 			this.setstatusBarHeight()
-			console.log(this.statusbarheight)
 		},
 	}
 </script>
 
 <style lang="scss" >
-	page {
-		background-color: #F8F8F8;
-	}
 
 	.content {
 		padding-left: 1vw;
 		padding-right: 1vw;
-		background-color: #F8F8F8;
 	}
 
 </style>

@@ -1,9 +1,5 @@
 <template>
 	<view class="category-list">
-		<view class="title_box">
-			<text class="main_title">高发症状</text>
-			<text class="subtitle">及早发现 及时治疗</text>
-		</view>
 		<view class="category" v-for="(row, index) in categoryList" :key="index" @tap="toCategory(row)">
 			<view class="img">
 				<image :src="row.img"></image>
@@ -19,7 +15,7 @@
 			return {
 				keyword: "",
 				statusBarHeight: 0,
-				categoryList: []
+				categoryList: ""
 			}
 		},
 		methods: {
@@ -44,37 +40,6 @@
 </script>
 
 <style lang="scss" scoped>
-	.title_box
-	{
-		width: 100vw;
-		margin-left: 8vw;
-		height: 18px;
-		display: flex;
-		padding-top:4vh;
-		align-items: center;
-	}
-	.main_title{
-		display: flex;
-		align-items: center;
-		font-size: 18px;
-		font-weight: bold;
-		padding-right: 10px;
-	}
-	.main_title::after
-	{
-		display: inline-block;
-		position: relative;
-		left: 10px;
-		content: "";
-		width:2px;
-		height:20px;
-		background-color: rgba(121,121,121,0.5);
-	}
-	.subtitle{
-		color: rgb(121,121,121);
-		padding-left: 10px;
-		font-size: 16px;
-	}
 	.category-list {
 		width: 100%;
 		margin: 3vh 0;
@@ -108,7 +73,7 @@
 				width: 100%;
 				display: flex;
 				justify-content: center;
-				font-size: 14px;
+				font-size: 24upx;
 				color: #3c3c3c;
 			}
 		}

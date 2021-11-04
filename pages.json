@@ -10,6 +10,12 @@
 			}
 		},
 		{
+			"path": "pages/index/searchResult",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
 			"path": "pages/me",
 			"style": {
 				"navigationBarTitleText": ""

@@ -45,18 +45,20 @@
 			getData() {
 				var that = this
 				uni.request({
-						url: 'http://api.hzxwhzxw.asia/mainList',
+						url: 'https://api.hzxwhzxw.asia/mainList',
 						success: (res) => {
-							that.mainList = res.data
+							if(res.statusCode==200)
+								that.mainList = res.data
 						},
 						fail: (res) => {
 							console.log('get失败');
 						}
 					}),
 				uni.request({
-					url: 'http://api.hzxwhzxw.asia/subList',
+					url: 'https://api.hzxwhzxw.asia/subList',
 					success: (res) => {
-						that.subList = res.data
+						if(res.statusCode==200)
+							that.subList = res.data
 					},
 					fail: (res) => {
 						console.log('get失败')

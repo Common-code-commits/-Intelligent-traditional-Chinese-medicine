@@ -24,7 +24,24 @@
 		methods: {
 			change(item) {
 				console.log(item)
+			},
+			getdata()
+			{
+				var that = this
+				uni.request({
+					url: 'https://api.hzxwhzxw.asia/sorted',
+					success: (res) => {
+						if(res.statusCode==200)
+							this.list = res.data.values
+					},
+					fail: (res) => {
+						console.log('get失败')
+					}
+				})
 			}
+		},
+		created:function(){
+			this.getdata()
 		}
 	};
 </script>

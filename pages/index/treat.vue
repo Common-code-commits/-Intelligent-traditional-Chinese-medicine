@@ -3,7 +3,7 @@
 		<view 
 			v-for="(item,index) in list" 
 			:key="index"
-			:style="item.style"
+			:style=item.style
 			class="item">
 			<text class="title">{{item.title}}</text>
 			<text class="subtitle">{{item.subtitle}}</text>
@@ -19,7 +19,7 @@
 				current: 0,
 				list: [{
 						style: {
-							background:"url(http://api.hzxwhzxw.asia/static/treat_1.png)",
+							background:"url(https://api.hzxwhzxw.asia/static/treat_1.png)",
 							backgroundRepeat: "no-repeat",   
 							backgroundSize: "100% 100%",     
 							color:"#2481E9"
@@ -30,7 +30,7 @@
 					},
 					{
 						style: {
-							background: "url(http://api.hzxwhzxw.asia/static/treat_2.png)",
+							background: "url(https://api.hzxwhzxw.asia/static/treat_2.png)",
 							backgroundRepeat: "no-repeat",
 							backgroundSize: "100% 100%", 
 							color:"#0CE3B7"

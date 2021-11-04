@@ -4,20 +4,6 @@
 		<view class="list">
 			<view class="column" v-for="(row, index) in Promotion" @tap="toPromotion(row)" :key="index"
 				:style="{backgroundImage:'url(' + row.img +')' }">
-				<view class="top">
-					<view class="title">{{ row.title }}</view>
-					<view class="countdown" v-if="row.countdown">
-						<view>{{ row.countdown.h }}</view>
-						:
-						<view>{{ row.countdown.m }}</view>
-						:
-						<view>{{ row.countdown.s }}</view>
-					</view>
-				</view>
-				<view class="left">
-					<view class="ad">{{ row.ad }}</view>
-					<view class="into">点击进入</view>
-				</view>
 			</view>
 		</view>
 	</view>

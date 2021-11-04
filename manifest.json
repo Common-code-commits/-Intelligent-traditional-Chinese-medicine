@@ -93,7 +93,7 @@
     },
     "quickapp" : {},
     "mp-weixin" : {
-        "appid" : "wx6fc55b2da1387a6c",
+        "appid" : "wx2e7171b748980a41",
         "setting" : {
             "urlCheck" : true,
             "es6" : false,
@@ -103,7 +103,12 @@
         "optimization" : {
             "subPackages" : true
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "小程序中需要使用定位"
+            }
+        }
     },
     "mp-alipay" : {
         "usingComponents" : true,

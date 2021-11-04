@@ -45,7 +45,7 @@
 			getData() {
 				var that = this
 				uni.request({
-						url: 'http://api.hzxwhzxw.asia/mainList',
+						url: 'https://api.hzxwhzxw.asia/mainList',
 						success: (res) => {
 							that.mainList = res.data
 						},

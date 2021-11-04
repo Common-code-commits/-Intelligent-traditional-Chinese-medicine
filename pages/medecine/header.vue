@@ -10,7 +10,7 @@
 			</view>
 		</view>
 		<view class="search_box">
-			<u-search placeholder="桂枝汤" v-model="keyword" :show-action="false">
+			<u-search placeholder="桂枝汤" v-model="keyword" :show-action="false" @search="search()">
 			</u-search>
 		</view>
 		<category></category>
@@ -25,47 +25,7 @@
 		data() {
 			return {
 				keyword: "",
-				categoryList: [{
-						id: 1,
-						name: '鼻塞',
-						img: 'http://api.hzxwhzxw.asia/static/鼻子.png'
-					},
-					{
-						id: 2,
-						name: '咳嗽',
-						img: 'http://api.hzxwhzxw.asia/static/肺部.png'
-					},
-					{
-						id: 3,
-						name: '胃病',
-						img: 'http://api.hzxwhzxw.asia/static/胃.png'
-					},
-					{
-						id: 4,
-						name: '牙痛',
-						img: 'http://api.hzxwhzxw.asia/static/牙齿.png'
-					},
-					{
-						id: 5,
-						name: '腹痛',
-						img: 'http://api.hzxwhzxw.asia/static/腹部.png'
-					},
-					{
-						id: 6,
-						name: '骨痛',
-						img: 'http://api.hzxwhzxw.asia/static/骨科.png'
-					},
-					{
-						id: 7,
-						name: '儿童',
-						img: 'http://api.hzxwhzxw.asia/static/孩子.png'
-					},
-					{
-						id: 8,
-						name: '外伤',
-						img: 'http://api.hzxwhzxw.asia/static/创口贴.png'
-					}
-				],
+				categoryList: [],
 			}
 		},
 		components: {
@@ -74,6 +34,22 @@
 			category
 		},
 		methods: {
+			search: function() {
+				var that = this
+				console.log(this.keyword)
+				uni.request({
+					url: 'https://api.hzxwhzxw.asia/searchmed',
+					data: {
+						keyword: that.keyword
+					},
+					success: (res) => {
+						console.log(res.data)
+					},
+					fail: (res) => {
+						console.log('get失败')
+					}
+				})
+			}
 		},
 		created: function() {
 		}

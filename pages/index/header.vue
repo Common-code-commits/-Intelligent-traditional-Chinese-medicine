@@ -1,5 +1,5 @@
 <template>
-	<view class="content_top" >
+	<view class="content_top">
 		<view class="top">
 			<view>
 				<location></location>
@@ -10,9 +10,12 @@
 			</view>
 		</view>
 		<view class="search_box">
-			<u-search placeholder="桂枝汤" 
-					  v-model="keyword" 
-					  :show-action="false">
+			<u-search 
+			placeholder="桂枝汤" 
+			v-model="keyword" 
+			:show-action="false"
+			@search="search()"
+			>
 			</u-search>
 		</view>
 		<view class="tabs_box">
@@ -45,6 +48,13 @@
 		methods: {
 			setheader: function() {
 				this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
+			},
+			search: function() {
+				this.$store.commit('setkeyword',this.keyword)
+				this.$store.state.keyword = this.keyword
+				uni.navigateTo({
+					url:"/pages/index/searchResult"
+				})
 			}
 		},
 		created: function() {
@@ -58,28 +68,31 @@
 		background: linear-gradient(to bottom,
 				$app_green 0%,
 				$app_green 75%,
-				rgba(0,0,0,0) 75%,
-				rgba(0,0,0,0) 100%);
+				rgba(0, 0, 0, 0) 75%,
+				rgba(0, 0, 0, 0) 100%);
 		padding-left: 6vw;
 		padding-right: 6vw;
 	}
+
 	.search_box,
 	.top {
 		width: 100%;
 	}
+
 	.top {
 		padding-bottom: 2vh;
 		display: flex;
 		justify-content: space-between;
 	}
-	.tabs_box
-	{
+
+	.tabs_box {
 		margin: 2vh 0;
 	}
-	.top_right{
-		width:18vw;
+
+	.top_right {
+		width: 18vw;
 		display: flex;
 		justify-content: space-between;
-		align-items:center;
+		align-items: center;
 	}
 </style>

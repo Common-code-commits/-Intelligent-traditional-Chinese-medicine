@@ -2,28 +2,21 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
-    state: {
-        testArr:['123','456','789'],
-        count:0,
-    },
-    mutations: {
-        setCountInc(state,num){
-            state.count = num;
-        },
-        setTestArrInc(state,arr){
-            state.testArr = arr;
-        }
-    },
-    actions: {
-
-    },
-    getters:{
-        count(state,getters){
-            return state.count
-        },
-        testArr(state,getters){
-            return state.testArr
-        },
-    }
+	state: {
+		keyword: "A",
+	},
+	mutations: {
+		// 登录
+		setkeyword(state, res) {
+			console.log(res)
+			if (res!=undefined)
+				uni.setStorageSync('keyword',res)
+		},
+		getkeyword(state){
+			let data = uni.getStorageSync('keyword')
+			if(data!=undefined)
+				state.keyword = data
+		}
+	}
 })
 export default store

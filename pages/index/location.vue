@@ -27,7 +27,6 @@
 					try{
 						that.text = res.address.city						
 					}catch(e){
-						console.log(e)
 					}
 			    }
 			})
@@ -40,7 +39,7 @@
 		    display: inline-block;
 		    width: 20px;
 		    height: 20px;
-		    background-image: url("http://api.hzxwhzxw.asia/static/location.svg");
+		    background-image: url("https://api.hzxwhzxw.asia/static/location.svg");
 			background-size:100% 100%;
 	}
 	.location_box{
@@ -55,7 +54,7 @@
 		    display: inline-block;
 		    width: 6px;
 		    height: 6px;
-		    background-image: url("http://api.hzxwhzxw.asia/static/triangle.svg");
+		    background-image: url("https://api.hzxwhzxw.asia/static/triangle.svg");
 			background-size:100% 100%;
 	}
 	p{

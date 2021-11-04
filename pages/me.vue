@@ -6,6 +6,7 @@
 				   :border-bottom="false"
 		></u-navbar>
 		<user></user>
+		<category></category>
 	    <view class="bot_k">
 	        <image class="bot_limg1" src="https://img1.baidu.com/it/u=3966393210,749231153&fm=26&fmt=auto"></image>
 	        <text class="bot_text1">{{t5}}</text>
@@ -25,6 +26,7 @@
 
 <script>
 	import user from "./me/users.vue"
+	import category from "./me/category.vue"
 	export default {
 		data() {
 			return {
@@ -38,7 +40,8 @@
 			}
 		},
 		components:{
-			user
+			user,
+			category
 		},
 		methods: {
 			setstatusBarHeight:function(){

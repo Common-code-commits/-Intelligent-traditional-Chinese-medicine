@@ -29,23 +29,6 @@
 				background:{
 					 background: '#44E8A8'
 				},
-				// 轮播图片
-				swiperList: [{
-						id: 1,
-						src: 'url1',
-						img: '/static/img/1.jpg'
-					},
-					{
-						id: 2,
-						src: 'url2',
-						img: '/static/img/2.jpg'
-					},
-					{
-						id: 3,
-						src: 'url3',
-						img: '/static/img/3.jpg'
-					}
-				],
 				//猜你喜欢列表
 				productList: [{
 						goods_id: 0,

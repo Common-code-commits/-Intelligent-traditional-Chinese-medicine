@@ -1,6 +1,6 @@
 <template>
 	<view class="root">
-		<image class="title" src="http://api.hzxwhzxw.asia/static/health.svg"></image>
+		<image class="title" src="https://api.hzxwhzxw.asia/static/health.svg"></image>
 		<view class="item">
 			<u-notice-bar
 				mode="vertical" 

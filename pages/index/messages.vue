@@ -1,6 +1,6 @@
 <template>
-	<view>
-		<image class="messages" src="http://api.hzxwhzxw.asia/static/messages.svg" >
+	<view class="root">
+		<image class="messages" src="https://api.hzxwhzxw.asia/static/messages.svg" >
 		</image>
 		<u-badge  size="mini" type="error" count="7" :is-center="true"></u-badge>
 	</view>
@@ -19,10 +19,10 @@
 	}
 </script>
 <style scoped lang="scss">
-	view{
+	.root{
 		position: relative;
 	}
-	.messages
+	.root,.messages
 	{
 		flex-shrink: 0;
 		width: 24px;
