@@ -1,5 +1,5 @@
 {
-    "name" : "666",
+    "name" : "杏林客",
     "appid" : "__UNI__2AE0302",
     "description" : "多平台快速开发的UI框架",
     "versionName" : "1.8.4",
@@ -93,7 +93,7 @@
     },
     "quickapp" : {},
     "mp-weixin" : {
-        "appid" : "wx2e7171b748980a41",
+        "appid" : "wx3734bf4e2756a465",
         "setting" : {
             "urlCheck" : true,
             "es6" : false,
